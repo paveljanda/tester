@@ -123,6 +123,7 @@ class Job
 		}
 
 		[$stdin, $this->stdout, $stderr] = $pipes;
+		var_dump(stream_get_contents($stderr));
 		fclose($stdin);
 		if ($flags & self::RUN_COLLECT_ERRORS) {
 			$this->stderr = $stderr;
